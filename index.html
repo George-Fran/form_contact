@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Contact form</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+
+  <main class="contenedor">
+    <form class="formulario" name="formulario">
+      <h2 class="formulario__titulo">Contact Us</h2>
+      <div class="grid">
+        <div class="campo">
+          <label for="name" class="formulario__label">First Name <span class="green">*</span></label>
+          <input class="formulario__input" type="text" id="name">
+          <p class="error"></p>
+        </div>
+        <div class="campo">
+          <label for="lname" class="formulario__label">Last Name <span class="green">*</span></label>
+          <input class="formulario__input" type="text" id="lname">
+          <p class="error"></p>
+        </div>
+        <div class="campo">
+          <label for="email" class="formulario__label">Email Address <span class="green">*</span></label>
+          <input class="formulario__input" type="email" id="email">
+          <p class="error"></p>
+          <p class="errora"></p>
+        </div>
+        <div class="campo">
+          <label for="query" class="formulario__label">Query Type <span class="green">*</span></label>
+          <div class="grid-radio">
+            <label class="radios" for="general">
+              <input type="radio" class="radio" name="query" id="general">
+              <label class="formulario__label">General Enquiry</label>
+            </label>
+            <label class="radios" for="support">
+              <input class="radio" type="radio" name="query" id="support">
+              <label>Support Request</label>
+            </label>
+          </div>
+          <p class="error-radio"></p>
+        </div>
+        <div class="campo">
+          <label class="formulario__label" for="message">Message <span class="green">*</span></label>
+          <textarea class="formulario__area resize-no" name="message" id="message"></textarea>
+          <p class="error"></p>
+        </div>
+      </div>
+      <div class="aceptar">
+        <input type="checkbox" id="permitir">
+        <label for="permitir" class="permitir">I consent to being contacted by the team <span class="green">*</span>
+        </label>
+      </div>
+      <p class="error"></p>
+
+
+      <div class="subir">
+        <input type="button" value="Submit" class="formulario__boton" id="boton">
+      </div>
+    </form>
+  </main>
+
+  <footer class="footer center">
+    <p>
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="https://www.instagram.com/geogz.dev/">Geogz</a>.
+    </p>
+  </footer>
+
+  <!-- <div class="success pe">
+    <div class="titulo">
+      <img src="assets/images/icon-success-check.svg" alt="">
+      <h3>Message Sent!</h3>
+    </div>
+    <p>Thanks for completing this form. We'll be in touch soon!</p>
+  </div> -->
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      document.getElementById('general').checked = false;
+      document.getElementById('support').checked = false;
+    });
+  </script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>

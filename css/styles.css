@@ -1,0 +1,215 @@
+:root {
+    --verde200: hsl(147, 39%, 91%);
+    --verde600: hsl(169, 82%, 27%);
+    --rojo: hsl(0, 66%, 54%);
+    --blanco: hsl(0, 0%, 100%);
+    --gris500: hsl(186, 15%, 59%);
+    --gris900: hsl(187, 24%, 22%);
+    --fuentePrincipal: "Karla", sans-serif;
+}
+
+/* Globales */
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*,
+*:before *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 16px;
+    font-family: var(--fuentePrincipal);
+    background-color: var(--verde200);
+}
+
+/** Contenedor **/
+.contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: min(90%, 120rem);
+    margin: 0 auto;
+}
+
+/** Formulario **/
+.formulario{
+    background-color: var(--blanco);
+    padding: 3rem;
+    border-radius: 1rem;
+    width: 70rem;
+}
+.formulario__titulo{
+    margin: 2rem 0;
+    font-size: 3.5rem;
+    color: var(--gris900);
+}
+.formulario__label{
+    color: var(--gris900);
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+.formulario__label span{
+    color: var(--verde600);
+}
+.formulario__input{
+    border: 1px solid var(--gris500);
+    border-radius: .5rem;
+    padding: 1.3rem;
+}
+.formulario__input:focus-within, .formulario__input:hover{
+    outline: none;
+    border: .15rem solid var(--verde600);
+}
+
+
+/** Grid al formulario **/
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    row-gap: 2rem;
+}
+
+
+/** Input radio **/
+.radios{
+    border: 1px solid var(--gris500);
+    padding: 1.3rem 2.5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+.radio{
+    accent-color: var(--verde600);
+    cursor: pointer;
+}
+.radios:hover{
+    border: 1px solid var(--verde600);
+}
+.radios:has(input:focus),
+.radios:has(input:checked) {
+  background-color: var(--verde200);
+  border-color: var(--verde600);
+}
+/** Caja campo **/
+.campo{
+    display: flex;
+    flex-direction: column;
+}
+.campo:nth-child(3){
+    grid-column: 1 / 3;
+}
+.campo:nth-child(4){
+    grid-column: 1 / 3;
+}
+/** grid a los inputs radio **/
+.grid-radio{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+}
+.campo:nth-child(5){
+    grid-column: 1 / 3;
+}
+/** textarea **/
+.formulario__area{
+    border: 1px solid var(--gris500);
+    border-radius: .5rem;
+    height: 9rem;
+}
+.formulario__area:focus-within{
+    outline: none;
+    border: .15rem solid var(--verde600);
+}
+.formulario__area:hover{
+    border-color: var(--verde600);
+}
+.resize-no{
+    resize: none;
+}
+
+/** aceptar o no checkbox**/
+.aceptar{
+    margin: 2.5rem 0 0 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.permitir{
+    font-weight: 400;
+    font-size: 1.3rem;
+    font-family: var(--fuentePrincipal);
+    color: var(--gris900);
+}
+.permitir span{
+    color: var(--verde600);
+}
+#permitir{
+    accent-color: var(--verde600);
+}
+
+
+/** boton **/
+.formulario__boton{
+    width: 100%;
+    padding: 1.5rem;
+    border: none;
+    background-color: var(--verde600);
+    color: var(--blanco);
+    border-radius: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 4rem;
+}
+.error, .errora, .error-radio{
+    color: var(--rojo);
+    margin-top: 1rem;
+}
+
+/* .success{
+    background-color: var(--gris900);
+    position: absolute;
+    top: 1rem;
+    border-radius: 1rem;
+    padding: 2.5rem;
+    left: 75rem;
+    margin: 0 auto;
+    color: var(--blanco);
+} */
+
+.success p{
+    margin-top: .6rem;
+    font-size: 1.4rem;
+    color: var(--gris500);
+}
+.titulo{
+    display: flex;
+    gap: 1rem;
+}
+.footer{
+    text-align: center;
+    background-color: var(--blanco);
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .grid{
+        display: block;
+    }
+    .grid-radio{
+        display: block;
+    }
+    .radios{
+        display: block;
+        margin-bottom: 1rem;
+    }
+    .formulario__input{
+        margin-bottom: 1rem;
+    }
+    .formulario__area{
+        height: 20rem;
+    }
+}
